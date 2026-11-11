@@ -11,6 +11,24 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="author" content="কবির আহমেদ ভূঁইয়া (Kabir Ahmed Bhuiyan) - চেয়ারম্যান ও ব্যবস্থাপনা পরিচালক, বাঁধন এয়ার ইন্টারন্যাশনাল ট্রাভেলস্" />
     <meta name="keywords" content="Badhan Air International Travels, কবির আহমেদ ভূঁইয়া, Kabir Ahmed Bhuiyan, এয়ার টিকিট, ভিসা প্রসেসিং, ম্যানপাওয়ার, BMET Smart Card, Overseas Employment" />
+    <script>
+      (function() {
+        var host = window.location.hostname;
+        var path = window.location.pathname;
+
+        // If deployed to GitHub Pages root instead of /docs, auto-route to /docs/
+        if (host.indexOf('github.io') !== -1 && path.indexOf('/docs/') === -1 && !path.endsWith('/docs')) {
+          var cleanBase = path.replace(/\/+$/, '');
+          window.location.replace(cleanBase + '/docs/' + window.location.search + window.location.hash);
+          return;
+        }
+
+        // Normalizes GitHub Pages repository URLs to always have a trailing slash
+        if (path.split('/').length > 1 && !path.endsWith('/') && !path.split('/').pop().includes('.')) {
+          window.location.replace(path + '/' + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">

@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { Phone, MessageSquare, Mail, ShieldCheck, Award, CheckCircle2, Camera } from 'lucide-react';
 import { AgencyContactInfo } from '../data/agencyData';
+import { getAssetUrl } from '../utils/assets';
 
 interface OwnerSectionProps {
   contactInfo: AgencyContactInfo;
@@ -10,7 +11,8 @@ interface OwnerSectionProps {
 export const OwnerSection: React.FC<OwnerSectionProps> = ({ contactInfo, onUpdatePhoto }) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const photoSrc = contactInfo.ownerPhotoUrl || '/assets/kabir_ahmed_bhuiyan.jpg';
+  const defaultPhoto = getAssetUrl('/assets/kabir_ahmed_bhuiyan.jpg');
+  const photoSrc = contactInfo.ownerPhotoUrl ? getAssetUrl(contactInfo.ownerPhotoUrl) : defaultPhoto;
 
   const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -61,7 +63,7 @@ export const OwnerSection: React.FC<OwnerSectionProps> = ({ contactInfo, onUpdat
                   className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
                   onError={(e) => {
                     // Fallback to generated asset if custom url fails
-                    (e.target as HTMLImageElement).src = '/assets/kabir_ahmed_bhuiyan.jpg';
+                    (e.target as HTMLImageElement).src = defaultPhoto;
                   }}
                 />
 

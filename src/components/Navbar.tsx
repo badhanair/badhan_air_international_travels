@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, MessageSquare, Menu, X } from 'lucide-react';
 import { AgencyContactInfo } from '../data/agencyData';
+import { getAssetUrl } from '../utils/assets';
 
 interface NavbarProps {
   contactInfo: AgencyContactInfo;
@@ -72,7 +73,7 @@ export const Navbar: React.FC<NavbarProps> = ({ contactInfo }) => {
             className="flex items-center gap-3 group whitespace-nowrap shrink-0 focus:outline-hidden"
           >
             <img
-              src="/assets/aistudio/logo_copy_757ea872.png"
+              src={getAssetUrl('/assets/aistudio/logo_copy_757ea872.png')}
               alt="Badhan Air International Travels Logo"
               className="h-10 sm:h-12 w-auto object-contain"
             />

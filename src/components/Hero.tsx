@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, ShieldCheck, Clock, Phone } from 'lucide-react';
 import { AgencyContactInfo } from '../data/agencyData';
+import { getAssetUrl } from '../utils/assets';
 
 interface HeroProps {
   contactInfo: AgencyContactInfo;
@@ -8,13 +9,16 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ contactInfo }) => {
+  const bgImageUrl = getAssetUrl('/assets/aistudio/air_ticket_copy554_6116c69b.jpg');
+  const logoUrl = getAssetUrl('/assets/aistudio/logo_copy_757ea872.png');
+
   return (
     <section className="relative bg-white text-slate-900 overflow-hidden py-14 sm:py-20 lg:py-24 border-b border-red-100">
       {/* User Uploaded Custom Brand Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
         style={{
-          backgroundImage: "url('/assets/aistudio/air_ticket_copy554_6116c69b.jpg')",
+          backgroundImage: `url('${bgImageUrl}')`,
         }}
       >
         {/* Soft gradient overlay to ensure perfect contrast and text readability */}
@@ -32,7 +36,7 @@ export const Hero: React.FC<HeroProps> = ({ contactInfo }) => {
           {/* Prominent Official Logo Badge */}
           <div className="mb-6 inline-block bg-white/95 backdrop-blur-xs p-3 sm:p-4 rounded-2xl border border-red-100 shadow-xs hover:shadow-md transition-shadow">
             <img
-              src="/assets/aistudio/logo_copy_757ea872.png"
+              src={logoUrl}
               alt="বাঁধন এয়ার ইন্টারন্যাশনাল ট্রাভেলস্"
               className="h-16 sm:h-20 w-auto object-contain"
             />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, Mail, MapPin, MessageSquare, ShieldCheck, Heart, Facebook, ExternalLink } from 'lucide-react';
 import { AgencyContactInfo } from '../data/agencyData';
+import { getAssetUrl } from '../utils/assets';
 
 interface FooterProps {
   contactInfo: AgencyContactInfo;
@@ -24,7 +25,7 @@ export const Footer: React.FC<FooterProps> = ({ contactInfo }) => {
             <div className="flex items-center gap-3">
               <div className="bg-white p-1.5 rounded-lg shadow-sm">
                 <img
-                  src="/assets/aistudio/logo_copy_757ea872.png"
+                  src={getAssetUrl('/assets/aistudio/logo_copy_757ea872.png')}
                   alt="Badhan Air International Travels"
                   className="h-9 w-auto object-contain"
                 />
