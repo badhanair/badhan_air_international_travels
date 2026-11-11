@@ -1,0 +1,6 @@
+{
+  "name": "Badhan Air International Travels",
+  "description": "Comprehensive air travel and overseas services website for Badhan Air International Travels, featuring international air ticketing, visa processing, manpower recruitment, and online overseas travel services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
