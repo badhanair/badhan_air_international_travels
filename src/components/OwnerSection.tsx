@@ -11,8 +11,8 @@ interface OwnerSectionProps {
 export const OwnerSection: React.FC<OwnerSectionProps> = ({ contactInfo, onUpdatePhoto }) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const defaultPhoto = getAssetUrl('/assets/kabir_ahmed_bhuiyan.jpg');
-  const photoSrc = contactInfo.ownerPhotoUrl ? getAssetUrl(contactInfo.ownerPhotoUrl) : defaultPhoto;
+  const defaultPhoto = getAssetUrl('/assets/aistudio/01711444699_Kabir_bfeb9b0e.jpg');
+  const photoSrc = defaultPhoto;
 
   const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];

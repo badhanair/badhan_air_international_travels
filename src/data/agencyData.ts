@@ -133,7 +133,7 @@ export const agencyContact: AgencyContactInfo = {
   ownerTitle: 'চেয়ারম্যান ও ব্যবস্থাপনা পরিচালক',
   ownerPhone: '01711-444699',
   ownerWhatsApp: '01711444699',
-  ownerPhotoUrl: '/assets/kabir_ahmed_bhuiyan.jpg',
+  ownerPhotoUrl: '/assets/aistudio/01711444699_Kabir_bfeb9b0e.jpg',
   ownerMessage: 'আমাদের লক্ষ্য হলো প্রতিটি প্রবাসগামী ভাই-বোন ও ভ্রমণকারীর জন্য শতভাগ সততা, নির্ভরযোগ্যতা ও বৈধ ট্রাভেল সেবা নিশ্চিত করা। যেকোনো প্রয়োজনে সরাসরি আমার সাথে যোগাযোগ করতে পারেন।',
 };
 

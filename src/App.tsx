@@ -21,6 +21,7 @@ export default function App() {
           whatsappDisplay: agencyContact.whatsappDisplay,
           phonePrimary: agencyContact.phonePrimary,
           emailPrimary: agencyContact.emailPrimary,
+          ownerPhotoUrl: agencyContact.ownerPhotoUrl,
         };
       }
     } catch {
