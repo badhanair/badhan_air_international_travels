@@ -116,8 +116,8 @@ export const agencyContact: AgencyContactInfo = {
   emailSecondary: 'info@badhanairtravels.com', // [Replace with Agency Domain Email]
   
   // Physical office address
-  officeAddress: '[Suite 402, Green Tower, Motijheel / Airport Road]', // [Replace with your street address]
-  cityCountry: '[Dhaka - 1000, Bangladesh]', // [Replace with city and country]
+  officeAddress: 'Mashjid Goli, Bholain Bazar',
+  cityCountry: 'Nangalkot, Cumilla',
   
   // Business hours
   operatingHours: 'Saturday to Thursday: 9:00 AM - 8:00 PM',

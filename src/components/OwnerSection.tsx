@@ -1,31 +1,15 @@
-import React, { useRef } from 'react';
-import { Phone, MessageSquare, Mail, ShieldCheck, Award, CheckCircle2, Camera } from 'lucide-react';
+import React from 'react';
+import { Phone, MessageSquare, Mail, ShieldCheck, Award, CheckCircle2 } from 'lucide-react';
 import { AgencyContactInfo } from '../data/agencyData';
 import { getAssetUrl } from '../utils/assets';
 
 interface OwnerSectionProps {
   contactInfo: AgencyContactInfo;
-  onUpdatePhoto?: (newPhotoUrl: string) => void;
 }
 
-export const OwnerSection: React.FC<OwnerSectionProps> = ({ contactInfo, onUpdatePhoto }) => {
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
+export const OwnerSection: React.FC<OwnerSectionProps> = ({ contactInfo }) => {
   const defaultPhoto = getAssetUrl('/assets/aistudio/01711444699_Kabir_bfeb9b0e.jpg');
   const photoSrc = defaultPhoto;
-
-  const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file && onUpdatePhoto) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        if (typeof reader.result === 'string') {
-          onUpdatePhoto(reader.result);
-        }
-      };
-      reader.readAsDataURL(file);
-    }
-  };
 
   return (
     <section id="leadership" className="py-16 sm:py-24 bg-gradient-to-b from-white via-slate-50 to-slate-100/70 border-t border-slate-200">
@@ -55,34 +39,15 @@ export const OwnerSection: React.FC<OwnerSectionProps> = ({ contactInfo, onUpdat
               <div className="absolute -top-12 -left-12 w-48 h-48 bg-red-600/20 rounded-full blur-2xl pointer-events-none"></div>
               <div className="absolute -bottom-12 -right-12 w-48 h-48 bg-blue-500/20 rounded-full blur-2xl pointer-events-none"></div>
 
-              {/* Photo Frame */}
+              {/* Photo Frame - Clean and Permanent (No edit/upload buttons) */}
               <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden border-4 border-white/90 shadow-2xl bg-slate-800">
                 <img
                   src={photoSrc}
                   alt="কবির আহমেদ ভূঁইয়া - চেয়ারম্যান ও ব্যবস্থাপনা পরিচালক"
                   className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
                   onError={(e) => {
-                    // Fallback to generated asset if custom url fails
                     (e.target as HTMLImageElement).src = defaultPhoto;
                   }}
-                />
-
-                {/* Upload Photo Button Overlay */}
-                {onUpdatePhoto && (
-                  <button
-                    onClick={() => fileInputRef.current?.click()}
-                    title="ছবি পরিবর্তন বা আপডেট করুন"
-                    className="absolute bottom-2 right-2 p-2 bg-slate-900/80 hover:bg-red-600 text-white rounded-xl backdrop-blur-xs shadow-md transition-colors cursor-pointer"
-                  >
-                    <Camera className="w-4 h-4" />
-                  </button>
-                )}
-                <input
-                  type="file"
-                  ref={fileInputRef}
-                  onChange={handlePhotoUpload}
-                  accept="image/*"
-                  className="hidden"
                 />
               </div>
 

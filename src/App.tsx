@@ -22,6 +22,8 @@ export default function App() {
           phonePrimary: agencyContact.phonePrimary,
           emailPrimary: agencyContact.emailPrimary,
           ownerPhotoUrl: agencyContact.ownerPhotoUrl,
+          officeAddress: agencyContact.officeAddress,
+          cityCountry: agencyContact.cityCountry,
         };
       }
     } catch {
@@ -81,10 +83,6 @@ export default function App() {
         {/* 2. Executive Leadership & Owner Section (কবির আহমেদ ভূঁইয়া, চেয়ারম্যান ও ব্যবস্থাপনা পরিচালক) */}
         <OwnerSection
           contactInfo={contactInfo}
-          onUpdatePhoto={(newPhoto) => {
-            const updated = { ...contactInfo, ownerPhotoUrl: newPhoto };
-            handleSaveContactInfo(updated);
-          }}
         />
 
         {/* 3. Direct Contact & Booking Inquiry Section */}
